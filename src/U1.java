@@ -14,8 +14,8 @@ public class U1 extends Rocket {
     @Override
     public boolean launch() {
         double random = Math.random();
-        chanceOfLaunchExplosion = 0.05 * (currentWeight / maxWeight);
-        return random > (chanceOfLaunchExplosion * 0.1);
+        chanceOfLaunchExplosion = 0.05 * (((double) currentWeight - (double) weight) / (double) maxWeight);
+        return random > chanceOfLaunchExplosion;
     }
 
     @Override

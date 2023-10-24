@@ -3,11 +3,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 public class Simulation {
-    public ArrayList<Item> loadItems() throws Exception {
+    public ArrayList<Item> loadItems(String pathname) throws Exception {
         ArrayList<Item> loadedItems = new ArrayList<Item>();
         String[] row;
         try {
-            File file = new File("phase1");
+            File file = new File(pathname);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 Item item = new Item();
@@ -53,7 +53,7 @@ public class Simulation {
         }
         return u2Rockets;
     }
-    public void runSimultaion(ArrayList<Rocket> rockets) {
+    public int runSimultaion(ArrayList<Rocket> rockets) {
         //Simulation ble = new Simulation();
         int budget =0;
         for(int i = 0; i < rockets.size(); i += 0) {
@@ -62,6 +62,6 @@ public class Simulation {
                 i++;
             }
         }
-        System.out.println(budget);
+        return budget;
     }
 }
