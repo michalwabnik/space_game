@@ -7,8 +7,6 @@ public class U2 extends Rocket {
         this.currentWeight = 11000;
         this.weight = 11000;
         this.cost = 1_200_000;
-/*        this.chanceOfLaunchExplosion = 0.05 * (currentWeight / maxWeight);
-        this.chanceOfLandingCrash = 0.01 * (currentWeight / maxWeight);*/
     }
 
     @Override
