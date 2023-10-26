@@ -3,10 +3,10 @@ public class U2 extends Rocket {
     private double chanceOfLandingCrash;
 
     public U2() {
-        this.maxWeight = 29000;
-        this.currentWeight = 11000;
-        this.weight = 11000;
-        this.cost = 1_200_000;
+        this.maxWeight = 29_000;
+        this.currentWeight = 11_000;
+        this.weight = 11_000;
+        this.setCost(1_200_000);
     }
 
     @Override

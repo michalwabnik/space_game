@@ -10,10 +10,8 @@ public class Simulation {
             File file = new File(pathname);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
-                Item item = new Item();
                 row = scanner.nextLine().split("=");
-                item.name = row[0];
-                item.weight = Integer.parseInt(row[1]);
+                Item item = new Item(Integer.parseInt(row[1]), row[0]);
                 loadedItems.add(item);
             }
         } catch (Exception exception) {
@@ -53,11 +51,11 @@ public class Simulation {
         }
         return u2Rockets;
     }
-    public int runSimultaion(ArrayList<Rocket> rockets) {
-        //Simulation ble = new Simulation();
+    public int runSimulation(ArrayList<Rocket> rockets) {
         int budget =0;
-        for(int i = 0; i < rockets.size(); i += 0) {
-            budget += rockets.get(i).cost;
+        int i = 0;
+        while(i < rockets.size()) {
+            budget += rockets.get(i).getCost();
             if (rockets.get(i).land() && rockets.get(i).launch()) {
                 i++;
             }

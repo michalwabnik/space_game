@@ -2,9 +2,15 @@ public class Rocket implements SpaceShip {
     int currentWeight;
     int maxWeight;
     int weight;
-    int cost;
+    private int cost;
 
-
+    public int getCost() {
+        this.cost = cost;
+        return cost;
+    }
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
     @Override
     public boolean launch() {
         return true;
@@ -17,11 +23,11 @@ public class Rocket implements SpaceShip {
 
     @Override
     public boolean canCarry(Item item) {
-        return currentWeight + item.weight <= maxWeight;
+        return currentWeight + item.getWeight() <= maxWeight;
     }
 
     @Override
     public void carry(Item item) {
-        currentWeight += item.weight;
+        currentWeight += item.getWeight();
     }
 }
