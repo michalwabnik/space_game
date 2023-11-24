@@ -1,8 +1,6 @@
 public class U1 extends Rocket {
-    private double chanceOfLaunchExplosion;
-    private double chanceOfLandingCrash;
 
-  public U1() {
+    public U1() {
         this.maxWeight = 18_000;
         this.currentWeight = 10_000;
         this.weight = 10_000;
@@ -12,14 +10,14 @@ public class U1 extends Rocket {
     @Override
     public boolean launch() {
         double random = Math.random();
-        chanceOfLaunchExplosion = 0.05 * (((double) currentWeight - (double) weight) / (double) maxWeight);
+        double chanceOfLaunchExplosion = 0.05 * (((double) currentWeight - (double) weight) / maxWeight);
         return random > chanceOfLaunchExplosion;
     }
 
     @Override
     public boolean land() {
         double random = Math.random() * 0.01;
-        chanceOfLandingCrash =  0.01 * (((double) currentWeight - (double) weight) / (double) maxWeight);
+        double chanceOfLandingCrash = 0.01 * (((double) currentWeight - (double) weight) / maxWeight);
         return random > chanceOfLandingCrash;
     }
 }

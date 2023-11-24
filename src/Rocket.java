@@ -5,7 +5,6 @@ public class Rocket implements SpaceShip {
     private int cost;
 
     public int getCost() {
-        this.cost = cost;
         return cost;
     }
     public void setCost(int cost) {
